@@ -1,0 +1,1145 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  color: #111;
+  overflow-x: hidden;
+}
+
+/* Sections */
+.section {
+  min-height: 100vh;
+  padding: 6rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ==============================
+   HERO
+============================== */
+
+.hero {
+  background: linear-gradient(
+    180deg,
+    #F5F1EB 0%,
+    #EFE8DD 100%
+  );
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.hero-text {
+  position: relative;
+}
+
+.hero h1 {
+  color: #1A1A1A;
+}
+
+.hero p {
+  color: #2A2A2A;
+  opacity: 0.85;
+}
+
+.hero-description {
+  margin-top: 1.5rem;
+  max-width: 48ch;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #2A2A2A;
+  opacity: 0.85;
+}
+
+/* Typing text + arrow */
+.intro-typing {
+  position: absolute;
+  right: -120px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #CFC6B8;
+  min-height: 32px;
+}
+
+#typing-text {
+  font-family: 'Caveat', cursive;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.intro-arrow {
+  width: 40px;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.intro-arrow.desktop {
+  display: block;
+}
+
+.intro-arrow.mobile {
+  display:none;
+}
+
+/* Hero image */
+.hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 80%;
+  height: auto;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.floating-image {
+  animation: float 4s ease-in-out infinite;
+}
+
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  color: #CFC6B8;
+}
+
+.scroll-text {
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  letter-spacing: 0.12em;
+  opacity: 0.7;
+  color: #CFC6B8;
+}
+
+.scroll-arrow {
+  width: 18px;
+  animation: scrollBounce 2.2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(6px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.6; }
+}
+
+/* ===============================
+   PROJECTS
+=============================== */
+
+.projects {
+  padding-right: 8rem;
+}
+
+.projects-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.projects-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-text h2 {
+  color: #1A1A1A;
+}
+
+/* Beskrivende tekst */
+.projects-description {
+  max-width: 42ch;
+  margin-top: 1.2rem;
+  margin-bottom: 3.2rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #2A2A2A;
+  opacity: 0.85;
+}
+
+/* Klik og læs mere */
+.projects-hint {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #CFC6B8;
+  margin-left: 12rem;
+  margin-top: 5rem;
+}
+
+.projects-hint-text {
+  font-family: 'Caveat', cursive;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.projects-hint-arrow {
+  width: 45px;
+  opacity: 0.8;
+  animation: hintNudge 2.6s ease-in-out infinite;
+}
+
+@keyframes hintNudge {
+  0% { transform: translateX(0); opacity: 0.6; }
+  50% { transform: translateX(6px); opacity: 1; }
+  100% { transform: translateX(0); opacity: 0.6; }
+}
+
+/* Billede i venstre kolonne */
+.projects-image {
+  margin-top: 3rem;
+  max-width: 280px;
+}
+
+.projects-image img {
+  width: 130%;
+  height: auto;
+}
+
+/* Tekst under billedet */
+.projects-image-note {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #CFC6B8;
+  margin-left: 12rem;
+}
+
+.projects-image-note-text {
+  font-family: 'Caveat', cursive;
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  opacity: 0.8;
+  white-space: nowrap;
+}
+
+.projects-image-note-arrow {
+  width: 35px;
+  opacity: 0.7;
+  animation: noteNudge 1.8s ease-in-out infinite;
+}
+
+@keyframes noteNudge {
+  0% { transform: translateX(0); opacity: 0.6; }
+  50% { transform: translateX(4px); opacity: 0.8; }
+  100% { transform: translateX(0); opacity: 0.6; }
+}
+
+/* Projektkort */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.project-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.16);
+}
+
+.project-card img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.project-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* ===============================
+   PROJECT MODAL
+=============================== */
+
+.project-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 1000;
+}
+
+.project-modal.active {
+  display: block;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  position: relative;
+  max-width: 820px;
+  max-height: 85vh;
+  margin: 6vh auto;
+  padding: 3rem;
+  background: #F5F1EB;
+  overflow-y: auto;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.modal-video {
+  width: 80%;
+  display: block;
+  margin: 0 auto 2rem auto;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* Figma link under h2 */
+
+.figma-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.4rem;
+  color: #CFC6B8;
+}
+
+/* Klikbart ikon */
+.figma-icon-link {
+  display: inline-flex;
+}
+
+.figma-icon {
+  width: 30px;
+  height: auto;
+  opacity: 0.9;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.figma-icon-link:hover .figma-icon {
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+/* Tekst */
+.figma-text {
+  font-family: 'Caveat', cursive;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* Pil */
+.figma-arrow {
+  width: 34px;
+  height: auto;
+  opacity: 0.8;
+  animation: figmaNudge 2.4s ease-in-out infinite;
+}
+
+@keyframes figmaNudge {
+  0% {
+    transform: translateX(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateX(4px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 0.6;
+  }
+}
+
+
+.modal-content h2 {
+  margin-bottom: 0.9rem;
+}
+
+.project-overview {
+  list-style: none;
+  padding: 0;
+  margin: 1.2rem 0;
+}
+
+
+.project-overview strong {
+  display: block;
+
+}
+
+.modal-content p {
+  margin-top: 0;
+  margin-bottom: 1.4rem;
+  line-height: 1.55;
+}
+
+.modal-content a {
+  color: #CFC6B8;
+  text-decoration: underline;
+}
+
+.modal-content a:hover {
+  opacity: 0.9;
+}
+
+
+/* Værktøjer */
+.project-tools {
+  margin-top: 2.2rem;
+}
+
+.project-tools h3 {
+  margin-bottom: 0.1rem;
+}
+
+.tools-icons {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 0.6rem;
+}
+
+.tools-icons img {
+  width: 36px;
+  opacity: 0.85;
+  transition: transform 0.2s ease;
+}
+
+.tools-icons img:hover {
+  transform: translateY(-2px);
+}
+
+/* Modal animation */
+.project-modal.active .modal-content {
+  animation: modalFadeIn 0.4s ease;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===============================
+   PROJECT 2 – VIDEO LAYOUT & CONTROLS
+=============================== */
+
+/* Grid til 2 videoer */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 1.6rem 0 2.6rem;
+  max-width:480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.video-wrapper img {
+  width: 100%;
+  display: block;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+
+/* Wrapper til alle videoer */
+.video-wrapper {
+  position: relative;
+}
+
+/* Selve videoen */
+.video-wrapper video {
+  width: 100%;
+  display: block;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+/* Stor video (Vitamin Water) */
+.video-wrapper.large video {
+  width: 80%;
+  margin: 0 auto 2rem auto;
+}
+
+/* Play / pause-knap */
+.video-toggle {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.55);
+  color: #ffffff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.video-toggle:hover {
+  transform: scale(1.08);
+  opacity: 0.95;
+}
+
+/* Skjul knap når video spiller */
+.video-wrapper.playing .video-toggle {
+  opacity: 1;
+  pointer-events: auto;
+  background: rgba(0,0,0,0.65);
+}
+.video-toggle {
+  opacity: 0;
+}
+
+.video-wrapper:hover .video-toggle,
+.video-wrapper.playing .video-toggle {
+  opacity: 1;
+}
+
+/* ===============================
+   ABOUT
+=============================== */
+
+#about {
+  padding-top: 2rem;
+}
+
+.about {
+  background: linear-gradient(
+    180deg,
+    #F5F1EB 0%,
+    #EFE8DD 100%
+  );
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* Tekst */
+.about-text h2 {
+  margin-bottom: 1.4rem;
+}
+
+.about-intro {
+  max-width: 46ch;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  color: #2A2A2A;
+}
+
+.about-description {
+  max-width: 46ch;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2.4rem;
+  color: #2A2A2A;
+  opacity: 0.85;
+}
+
+/* CV-knap */
+.cv-button {
+  display: inline-block;
+  padding: 0.75rem 1.8rem;
+  border: 1px solid #CFC6B8;
+  background-color: #CFC6B8;
+  color: #111;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.cv-button:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Billede */
+.about-image {
+  position: relative;
+}
+
+.about-image img {
+  width: 90%;
+}
+
+/* ===============================
+   ABOUT – HINT TEXT + ARROW
+=============================== */
+
+.about {
+  position: relative;
+}
+
+.about-hint {
+  position: absolute;
+  left: 45%;
+  top: 5%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #CFC6B8;
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+.about-hint-text {
+  font-family: 'Caveat', cursive;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.about-hint-arrow {
+  width: 48px;
+  opacity: 0.75;
+  animation: aboutHintNudge 2.6s ease-in-out infinite;
+}
+
+@keyframes aboutHintNudge {
+  0% { transform: translateX(0); opacity: 0.6; }
+  50% { transform: translateX(6px); opacity: 1; }
+  100% { transform: translateX(0); opacity: 0.6; }
+}
+
+/* ===============================
+   TESTIMONIALS
+=============================== */
+
+.testimonials-heading {
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+  color: #1A1A1A;
+}
+
+.testimonial {
+  max-width: 52ch;
+}
+
+.testimonial-quote {
+  font-size: 0.95rem;
+  line-height: 1.6rem;
+  color: #2A2A2A;
+}
+
+/* Afsender */
+.testimonial-author {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.testimonial-icon {
+  width: auto;
+  height: 30px;
+  margin-bottom: 0.8rem;
+}
+
+.testimonial-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.testimonial-title {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Kun på den første */
+.testimonial-reference {
+  margin-top: 0.2rem;
+  font-size: 0.75rem;
+  color: #CFC6B8;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.testimonial-quote {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #2A2A2A;
+  margin-top: 1rem;
+}
+
+
+/* ===============================
+   TESTIMONIAL CARD
+=============================== */
+
+.testimonial {
+  background: #ffffff;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ===============================
+   ABOUT – SOM PERSON
+=============================== */
+
+.about-person {
+  margin-top: 6rem;
+}
+
+.about-person h3 {
+  margin-bottom: 1.6rem;
+  color: #1A1A1A;
+}
+
+.about-person-text {
+  max-width: 46ch;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #2A2A2A;
+  margin-bottom: 1.2rem;
+  
+}
+
+.about-person-text:last-child {
+  margin-bottom: 0;
+}
+
+
+.about-person .about-image img {
+  width: 70%;
+  height: auto;
+}
+
+/* ===============================
+   ABOUT – SOM PERSON HINT
+=============================== */
+
+.about-person {
+  position: relative;
+}
+
+.about-person-hint {
+  position: absolute;
+  top: 60%;
+  left: 42%;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #CFC6B8;
+  pointer-events: none;
+}
+
+.about-person-hint-text {
+  font-family: 'Caveat', cursive;
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  opacity: 0.85;
+}
+
+.about-person-hint-arrow {
+  width: 35px;
+  opacity: 0.8;
+  animation: hintNudge 2.4s ease-in-out infinite;
+}
+
+/* ===============================
+   ABOUT – TOOLS
+=============================== */
+
+.about-tools {
+  margin-top: 6rem;
+}
+
+.about-tools h3 {
+  margin-bottom: 0.6rem;
+  color: #1A1A1A;
+}
+
+/*================================
+Kontakt
+===============================*/
+.contact-layout {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.contact-image img {
+  max-width: 340px;
+  width: 100%;
+}
+
+.contact-text {
+  max-width: 46ch;
+}
+
+.contact-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.2rem;
+}
+
+.contact-links li {
+  margin-bottom: 0.6rem;
+}
+
+.contact-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #111;
+  text-decoration: underline;
+}
+
+.contact-social img {
+  width: 40px;
+  height: auto;
+  opacity: 0.85;
+}
+
+.contact-social:hover img {
+  opacity: 1;
+}
+
+.contact-text-only {
+  font-size: 0.95rem;
+  color: #111;
+  margin-bottom: 0.6rem;
+}
+
+.contact-socials {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 2rem; /* luft fra teksten over */
+}
+
+.contact-social-icon img {
+  width: 34px;
+  height: auto;
+  opacity: 0.85;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.contact-social-icon:hover img {
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+.contact-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #CFC6B8;
+  margin-top: 2.2rem;
+  margin-left: 2.2rem;
+}
+
+#contact-typing {
+  font-family: 'Caveat', cursive;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.contact-hint-arrow {
+  width: 36px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+
+/* ===============================
+   SIDE NAV
+=============================== */
+
+.side-nav {
+  position: fixed;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 10;
+}
+
+.side-nav a {
+  font-size: 0.85rem;
+  color: #aaa;
+  text-decoration: none;
+}
+
+.side-nav a.active {
+  color: #111;
+  font-weight: 600;
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+
+@media (max-width: 1024px) {
+  /* ===============================
+   HERO – RESPONSIVE
+=============================== */
+
+.hero {
+  grid-template-columns: 1fr;
+}
+
+.hero-text {
+  order: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-image {
+  order: 2;
+  justify-content: center;
+}
+
+/* Typing-tekst + pil centreres og placeres over billedet */
+.intro-typing {
+  position: static;
+  justify-content: center;
+  margin: 2rem 0 1.5rem;
+}
+
+#typing-text {
+  font-size: 1.4rem;
+}
+
+.intro-arrow.desktop {
+  display: none;
+}
+
+.intro-arrow.mobile {
+  display: block;
+  opacity: 1;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Rækkefølge */
+.hero-text h1 {
+  order: 1;
+}
+
+.hero-text > p:first-of-type {
+  order: 2; /* Design & æstetik · Content creation */
+}
+
+.hero-description {
+  order: 3;
+}
+
+/* Typing-tekst + pil nederst i teksten */
+.intro-typing {
+  order: 4;
+  margin-top: 1.8rem;
+}
+
+.scroll-indicator {
+  position: static;
+  transform: none;
+  margin-top: 0.1rem;
+  order: 3;
+}
+
+.hero-image {
+  order: 2;
+}
+
+.intro-arrow {
+  width: 26px;
+}
+
+.hero {
+ gap: 1rem;
+}
+
+.projects-hint {
+  display: none;
+}
+
+.projects-image {
+  margin-top: 0.1rem; /* før: 3rem */
+}
+
+  .projects-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-text {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .projects-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .projects-hint,
+  .projects-image-note {
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .projects {
+    padding-right: 0;
+  }
+
+  .figma-text {
+    white-space: normal;   /* tillad linjeskift */
+    max-width: 26ch;       /* tving 2 linjer på en pæn måde */
+    text-align: center;    /* ser bedst ud på mobil */
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-image {
+    transform: none;
+  }
+
+  .about-image-caption {
+    text-align: center;
+  }
+
+  .about-hint {
+    display: none;
+  }
+
+  .about-person .about-image {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .side-nav {
+    display: none;
+  }
+
+  .section {
+    padding: 4rem 2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-hint-arrow,
+  .projects-image-note-arrow {
+    animation: none;
+  }
+
+  .modal-content {
+    margin: 8vh 1.5rem;
+    padding: 2rem;
+  }
+
+  .figma-arrow {
+    animation: none;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .video-wrapper.large video {
+    width: 100%;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-person-hint {
+    display: none;
+  }
+
+  .tools-icons {
+    flex-wrap: wrap;
+  }
+
+  .floating-image {
+    animation: none;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
